@@ -25,13 +25,7 @@ while N < BIG_N:
     if any(
         map(
             lambda i: i in IMAGES,
-            map(
-                ''.join,
-                zip(
-                    [f'{N}.'] * 4,
-                    ['png', 'jpg', 'gif', 'jpeg']
-                    )
-                )
+            '{}.jpg {}.png {}.gif {}.jpeg'.format(*[N] * 4).split()
             )
         ):
         continue
